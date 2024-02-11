@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./css/index.css?v=8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.mjs"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.worker.min.mjs"></script>
+    <script type="module" src="./js/downloadPdf.js"></script>
+    <script type="module" src="./js/uploadPdf.js?v=3"></script>
+    <script type="module" src="./js/index.js?v=6"></script>
+
+    <title>PDF Editor</title>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <!--TOP BAR-->
+        <div class="topBar">
+            <label id='upload_label' for="upload" class="item">
+                <img src="./assets/upload.svg?v=3" />
+                Import
+            </label>
+            <input type="file" id="upload" name="filename">
+
+            <span class="row">
+                <button class="row">
+                    <img src="./assets/prev.svg?v=1" />
+                </button>
+                <span id='pageNumber' class="row">
+                    1/5
+                </span>
+
+                <button class="row">
+                    <img src="./assets/next.svg?v=1" />
+                </button>
+            </span>
+
+
+            <span class="row">
+                <button class="item">
+                    <img src="./assets/zoom_out.svg" />
+                </button>
+                <input id="scale" type="number" placeholder="100%" />
+                <button class="item">
+                    <img src="./assets/zoom_in.svg" />
+                </button>
+            </span>
+
+            <button class="item">
+                Annotate
+            </button>
+
+            <button id="download" class="item">
+                <img src="./assets/download.svg?v=5" />
+                Export
+            </button>
+        </div>
+
+        <!--FILE-->
+
+        <div id="dragNDrop">
+
+            <div id="drop_text" class="row">
+                <img src="./assets/add.svg?v=2" />
+                Drop files here
+            </div>
+
+
+            <canvas id="canvas">
+
+            </canvas>
+        </div>
+    </div>
+</body>
+
+</html>
